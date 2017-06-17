@@ -17,7 +17,7 @@ app.get('/api/whoami', (req, res) => {
 
   let { browser, os, version } = system;
 
-  res.json({ address, language, browser, os, 'browserVersion': version });
+  res.json({ address: address[0] || address, language, browser, os, 'browserVersion': version });
 });
 
 app.listen(port, () => {
