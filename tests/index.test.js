@@ -11,8 +11,10 @@ describe('API', () => {
       .expect(200)
       .expect(res => {
         expect(res.body.address).toBeA('string');
-        expect(res.body.language).toBeA('string');
-        expect(res.body.system).toBeA('string');
+        expect(res.body.language).toExist();
+        expect(res.body.os).toBeA('string');
+        expect(res.body.browser).toBeA('string');
+        expect(res.body.browserVersion).toBeA('string');
       })
       .end(done);
   });
